@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W3 tutorial</title>
+  </head>
+  <body>
+    <form
+      action="./index.html"
+      target="__blanck"
+      method="get"
+      autocomplete="on"
+      name="My form"
+    >
+      <label for="fname">First Name</label>
+      <input type="text" name="fname" id="fname" /> <br />
+
+      <label for="lname">Last Name</label>
+      <input type="text" name="lname" id="lname" /> <br />
+      <input type="submit" value="Submit" />
+      <input type="button" value="None" ondblclick="alert('Bonjour')" />
+    </form>
+
+    <form action="" style="margin-top: 16px">
+      <fieldset>
+        <legend>Phone</legend>
+        <select name="phone" id="phone"></select>
+        <option value="s12">s12</option>
+        <option value="s23">S23</option>
+      </fieldset>
+    </form>
+    <br />
+    <form action="">
+      <input list="fnamewb" id="" />
+      <datalist id="fnamewb" size="3">
+        <option value="edbe">Mathias</option>
+        <option value="edbe2">Mathias2</option>
+        <option value="edbe3">Mathias24</option>
+        <option value="edbe4">Mathias23</option>
+      </datalist>
+    </form>
+    <br /><br />
+    <form action="" oninput="r.value = parseInt(x.value) + parseInt(y.value)">
+      <input type="text" name="x" value="0" /> +
+      <input type="text" name="y" value="0" />
+      =
+      <output name="r"> </output>
+    </form>
+    <br /><br />
+
+    <canvas
+      id="mycanvas"
+      width="200"
+      height="100"
+      style="border: 1px solid #000000"
+    ></canvas>
+
+    <canvas
+      id="mycanvas2"
+      width="200"
+      height="100"
+      style="border: 2px solid #142bc4"
+    ></canvas>
+
+    <canvas
+      id="mycanvas3"
+      width="200"
+      height="100"
+      style="border: 2px solid #d117a6"
+    ></canvas>
+
+    <script>
+      var c = document.getElementById("mycanvas");
+      var ctx = c.getContext("2d");
+      // line
+      ctx.moveTo(0, 0);
+      ctx.lineTo(200, 100);
+      ctx.stroke();
+
+      // circle
+
+      ctx.beginPath();
+      ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+      ctx.stroke();
+
+      //Text
+      ctx.font = "30px Arial";
+      ctx.fillText("Hello World", 10, 50);
+
+      // Text??????? not working
+      var c2 = document.getElementById("myCanvas2");
+      var ctx2 = c2.getContext("2d");
+      ctx2.font = "30px Arial";
+      ctx2.strokeText("Hello World", 10, 55);
+
+      // Create gradient
+      var c3 = document.getElementById("myCanvas3");
+      var ctx3 = c3.getContext("2d");
+      // Create gradient
+      var grd = ctx3.createLinearGradient(0, 0, 200, 0);
+      var grd = ctx3.createLinearGradient(0, 0, 200, 0);
+      grd.addColorStop(0, "red");
+      grd.addColorStop(1, "white");
+      // Fill with gradient
+      ctx3.fillStyle = grd;
+      ctx3.fillRect(10, 10, 150, 80);
+    </script>
+  </body>
+</html>
